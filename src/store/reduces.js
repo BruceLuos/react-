@@ -1,17 +1,8 @@
-const defaultState = {
-  focurs: false
-};
+import {combineReducers} from 'redux'
+import {reducer as HeaderReducer} from '../common/header/store'
 
-export default (state = defaultState, action) => {
-  if (action.type === "changefocurs") {
-    const newState = JSON.parse(JSON.stringify(state));
-    newState.focurs = true;
-    return newState;
-  }
-  if (action.type === "changefocurss") {
-    const newState = JSON.parse(JSON.stringify(state));
-    newState.focurs = false;
-    return newState;
-  }
-  return state;
-};
+
+const reducer = combineReducers({
+    header:HeaderReducer
+})
+export default reducer
