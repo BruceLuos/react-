@@ -1,5 +1,6 @@
 import React from "react";
 import { CSSTransition } from "react-transition-group";
+import {actionCreater} from "./store";
 import {
   HeaderWrapper,
   Logo,
@@ -27,7 +28,7 @@ const Header = props => {
           <CSSTransition in={props.focurs} timeout={200} classNames="slide">
             <NaviInput
               className={props.focurs ? "focurs" : ""}
-              onFocus={props.handleFocus}
+              onFocus={props.handleFocurs}
               onBlur={props.handleBlur}
             ></NaviInput>
           </CSSTransition>
@@ -47,17 +48,11 @@ const mapStateToProps = state => {
 };
 const mapDispatchToProps = dispatch => {
   return {
-    handleFocus() {
-      const action = {
-        type: "changefocurs"
-      };
-      dispatch(action);
+    handleFocurs() {
+      dispatch(actionCreater.handleFocurs());
     },
     handleBlur() {
-      const action = {
-        type: "changefocurss"
-      };
-      dispatch(action);
+      dispatch(actionCreater.handleBlur());
     }
   };
 };
