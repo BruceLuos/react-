@@ -43,7 +43,7 @@ const Header = props => {
 };
 const mapStateToProps = state => {
   return {
-    focurs: state.header.focurs
+    focurs: state.header.get('focurs')
   };
 };
 const mapDispatchToProps = dispatch => {
