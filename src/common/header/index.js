@@ -1,6 +1,6 @@
 import React from "react";
 import { CSSTransition } from "react-transition-group";
-import {actionCreater} from "./store";
+import { actionCreater } from "./store";
 import {
   HeaderWrapper,
   Logo,
@@ -9,10 +9,36 @@ import {
   NaviInput,
   Addition,
   Button,
-  SearchWrapper
+  SearchWrapper,
+  SearchInfo,
+  SearchInfoTitle,
+  SearchInfoSwitch,
+  SearchInfoItem
 } from "./style";
 import { connect } from "react-redux";
 
+const ShowSearchItem = show => {
+  if (show) {
+    return (
+      <SearchInfo>
+        <SearchInfoTitle>
+          热门搜索
+          <SearchInfoSwitch>换一批</SearchInfoSwitch>
+        </SearchInfoTitle>
+        <div>
+          <SearchInfoItem>高考</SearchInfoItem>
+          <SearchInfoItem>高考</SearchInfoItem>
+          <SearchInfoItem>高考</SearchInfoItem>
+          <SearchInfoItem>高考</SearchInfoItem>
+          <SearchInfoItem>高考</SearchInfoItem>
+          <SearchInfoItem>高考</SearchInfoItem>
+        </div>
+      </SearchInfo>
+    );
+  } else {
+    return null;
+  }
+};
 const Header = props => {
   return (
     <HeaderWrapper>
@@ -32,6 +58,7 @@ const Header = props => {
               onBlur={props.handleBlur}
             ></NaviInput>
           </CSSTransition>
+          {ShowSearchItem(props.focurs)}
         </SearchWrapper>
       </Navi>
       <Addition>
@@ -43,7 +70,7 @@ const Header = props => {
 };
 const mapStateToProps = state => {
   return {
-    focurs: state.header.get('focurs')
+    focurs: state.get("header").get("focurs")
   };
 };
 const mapDispatchToProps = dispatch => {
