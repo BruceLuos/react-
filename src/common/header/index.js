@@ -52,6 +52,11 @@ class Header extends Component {
     );
   }
   ShowSearchItem() {
+    const newList = this.props.headerList.toJS()
+    const ShowList = [];
+    for (let i = this.props.page * 10; i < (this.props.page+1)*10; i++) {
+      ShowList.push(<SearchInfoItem key={i}>{newList[i]}</SearchInfoItem>);
+    }
     if (this.props.focurs) {
       return (
         <SearchInfo>
@@ -59,9 +64,7 @@ class Header extends Component {
             热门搜索
             <SearchInfoSwitch>换一批</SearchInfoSwitch>
           </SearchInfoTitle>
-          {this.props.headerList.map((item, index) => {
-            return <SearchInfoItem key={index}>{item}</SearchInfoItem>;
-          })}
+          {ShowList}
         </SearchInfo>
       );
     } else {
@@ -73,7 +76,9 @@ class Header extends Component {
 const mapStateToprops = state => {
   return {
     focurs: state.get("header").get("focurs"),
-    headerList: state.get("header").get("headerList")
+    headerList: state.get("header").get("headerList"),
+    totalPage: state.get("header").get("totalPage"),
+    page: state.get("header").get("page")
   };
 };
 const mapDispatchToprops = dispatch => {

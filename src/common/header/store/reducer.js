@@ -4,7 +4,9 @@ import { fromJS } from "immutable";
 // immutable
 const defaultState = fromJS({
   focurs: false,
-  headerList:[]
+  headerList:[],
+  page:0,
+  totalPage:1
 });
 
 export default (state = defaultState, action) => {
@@ -20,7 +22,7 @@ export default (state = defaultState, action) => {
     return state.set('focurs',false)
   }
   if(action.type === constant.InitDATA){
-    return state.set('headerList',action.data)
+    return state.set('headerList',action.data).set('totalPage',action.totalPage)
   }
   return state;
 };
