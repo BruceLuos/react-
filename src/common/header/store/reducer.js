@@ -3,7 +3,8 @@ import { fromJS } from "immutable";
 
 // immutable
 const defaultState = fromJS({
-  focurs: false
+  focurs: false,
+  headerList:[]
 });
 
 export default (state = defaultState, action) => {
@@ -17,6 +18,9 @@ export default (state = defaultState, action) => {
     // newState.focurs = false;
     // return newState;
     return state.set('focurs',false)
+  }
+  if(action.type === constant.InitDATA){
+    return state.set('headerList',action.data)
   }
   return state;
 };
