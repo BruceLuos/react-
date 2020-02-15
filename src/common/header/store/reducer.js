@@ -6,7 +6,8 @@ const defaultState = fromJS({
   focurs: false,
   headerList:[],
   page:0,
-  totalPage:1
+  totalPage:1,
+  mouseIn:false
 });
 
 export default (state = defaultState, action) => {
@@ -23,6 +24,15 @@ export default (state = defaultState, action) => {
   }
   if(action.type === constant.InitDATA){
     return state.set('headerList',action.data).set('totalPage',action.totalPage)
+  }
+  if(action.type === constant.CHANGEITEM){
+    return state.set('page',action.page)
+  }
+  if(action.type === constant.MOUSEENTER){
+    return state.set('mouseIn',true)
+  }
+  if(action.type === constant.MOUSELEAVE){
+    return state.set('mouseIn',false)
   }
   return state;
 };

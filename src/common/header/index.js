@@ -52,17 +52,27 @@ class Header extends Component {
     );
   }
   ShowSearchItem() {
-    const newList = this.props.headerList.toJS()
+    const { page, totalPage,handleEnter,headerList,handleLeave,focurs,mouseIn,changeItem } = this.props;
+    const newList = headerList.toJS();
     const ShowList = [];
-    for (let i = this.props.page * 10; i < (this.props.page+1)*10; i++) {
+    for (let i = page * 10; i < (page + 1) * 10; i++) {
       ShowList.push(<SearchInfoItem key={i}>{newList[i]}</SearchInfoItem>);
     }
-    if (this.props.focurs) {
+    if (focurs || mouseIn) {
       return (
-        <SearchInfo>
+        <SearchInfo
+          onMouseEnter={handleEnter}
+          onMouseLeave={handleLeave}
+        >
           <SearchInfoTitle>
             热门搜索
-            <SearchInfoSwitch>换一批</SearchInfoSwitch>
+            <SearchInfoSwitch
+              onClick={() => {
+                changeItem(page, totalPage);
+              }}
+            >
+              换一批
+            </SearchInfoSwitch>
           </SearchInfoTitle>
           {ShowList}
         </SearchInfo>
@@ -78,7 +88,8 @@ const mapStateToprops = state => {
     focurs: state.get("header").get("focurs"),
     headerList: state.get("header").get("headerList"),
     totalPage: state.get("header").get("totalPage"),
-    page: state.get("header").get("page")
+    page: state.get("header").get("page"),
+    mouseIn: state.get("header").get("mouseIn")
   };
 };
 const mapDispatchToprops = dispatch => {
@@ -89,6 +100,21 @@ const mapDispatchToprops = dispatch => {
     },
     handleBlur() {
       dispatch(actionCreater.handleBlur());
+    },
+    handleEnter() {
+      dispatch(actionCreater.mouseEnter());
+    },
+    handleLeave() {
+      dispatch(actionCreater.mouseLeave());
+    },
+    changeItem(page, totalPage) {
+      let pagedata = page;
+      if (pagedata < totalPage-1) {
+        dispatch(actionCreater.changeItem(pagedata+1));
+      } else {
+        dispatch(actionCreater.changeItem(0));
+      }
+      
     }
   };
 };

@@ -33,3 +33,19 @@ export const getList = ()=>{
     })
   }
 }
+export const changeItem = (page)=>{
+  return {
+    type:constant.CHANGEITEM,
+    page:page
+  }
+}
+export const mouseEnter = ()=>{
+  return {
+    type:constant.MOUSEENTER
+  }
+}
+export const mouseLeave = ()=>{
+  return {
+    type:constant.MOUSELEAVE
+  }
+}
