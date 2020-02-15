@@ -18,6 +18,49 @@ import {
 import { connect } from "react-redux";
 
 class Header extends Component {
+    ShowSearchItem() {
+        const {
+          page,
+          totalPage,
+          handleEnter,
+          headerList,
+          handleLeave,
+          focurs,
+          mouseIn,
+          changeItem
+        } = this.props;
+        const newList = headerList.toJS();
+        const ShowList = [];
+        for (let i = page * 10; i < (page + 1) * 10; i++) {
+          ShowList.push(<SearchInfoItem key={i}>{newList[i]}</SearchInfoItem>);
+        }
+        if (focurs || mouseIn) {
+          return (
+            <SearchInfo onMouseEnter={handleEnter} onMouseLeave={handleLeave}>
+              <SearchInfoTitle>
+                热门搜索
+                <SearchInfoSwitch
+                  onClick={() => {
+                    changeItem(page, totalPage,this.spinIcon);
+                  }}
+                >
+                  <i
+                    ref={icon => {
+                      this.spinIcon = icon;
+                    }}
+                    className="iconfont spin"
+                  >
+                    &#xe851;
+                  </i>换一批
+                </SearchInfoSwitch>
+              </SearchInfoTitle>
+              {ShowList}
+            </SearchInfo>
+          );
+        } else {
+          return null;
+        }
+      }
   render() {
     return (
       <HeaderWrapper>
@@ -37,7 +80,7 @@ class Header extends Component {
             >
               <NaviInput
                 className={this.props.focurs ? "focurs" : ""}
-                onFocus={this.props.handleFocurs}
+                onFocus={()=>{this.props.handleFocurs(this.props.headerList)}}
                 onBlur={this.props.handleBlur}
               ></NaviInput>
             </CSSTransition>
@@ -51,36 +94,7 @@ class Header extends Component {
       </HeaderWrapper>
     );
   }
-  ShowSearchItem() {
-    const { page, totalPage,handleEnter,headerList,handleLeave,focurs,mouseIn,changeItem } = this.props;
-    const newList = headerList.toJS();
-    const ShowList = [];
-    for (let i = page * 10; i < (page + 1) * 10; i++) {
-      ShowList.push(<SearchInfoItem key={i}>{newList[i]}</SearchInfoItem>);
-    }
-    if (focurs || mouseIn) {
-      return (
-        <SearchInfo
-          onMouseEnter={handleEnter}
-          onMouseLeave={handleLeave}
-        >
-          <SearchInfoTitle>
-            热门搜索
-            <SearchInfoSwitch
-              onClick={() => {
-                changeItem(page, totalPage);
-              }}
-            >
-              换一批
-            </SearchInfoSwitch>
-          </SearchInfoTitle>
-          {ShowList}
-        </SearchInfo>
-      );
-    } else {
-      return null;
-    }
-  }
+  
 }
 
 const mapStateToprops = state => {
@@ -94,8 +108,8 @@ const mapStateToprops = state => {
 };
 const mapDispatchToprops = dispatch => {
   return {
-    handleFocurs() {
-      dispatch(actionCreater.getList());
+    handleFocurs(list) {
+        (list.size === 0)&& dispatch(actionCreater.getList());
       dispatch(actionCreater.handleFocurs());
     },
     handleBlur() {
@@ -107,14 +121,21 @@ const mapDispatchToprops = dispatch => {
     handleLeave() {
       dispatch(actionCreater.mouseLeave());
     },
-    changeItem(page, totalPage) {
+    changeItem(page, totalPage,spin) {
+        // 旋转动画
+        let originAngle = spin.style.transform.replace(/[^0-9]/ig, '');
+			if (originAngle) {
+				originAngle = parseInt(originAngle, 10);
+			}else {
+				originAngle = 0;
+			}
+			spin.style.transform = 'rotate(' + (originAngle + 360) + 'deg)';
       let pagedata = page;
-      if (pagedata < totalPage-1) {
-        dispatch(actionCreater.changeItem(pagedata+1));
+      if (pagedata < totalPage - 1) {
+        dispatch(actionCreater.changeItem(pagedata + 1));
       } else {
         dispatch(actionCreater.changeItem(0));
       }
-      
     }
   };
 };

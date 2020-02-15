@@ -111,6 +111,15 @@ export const SearchInfoTitle = styled.div`
 export const SearchInfoSwitch = styled.span`
   font-size: 12px;
   float: right;
+  cursor:pointer;
+  .spin{
+    font-size:14px;
+    margin-left:2px;
+    display:block;
+    transition: all .2s ease-in;
+    transform-origin: center center;
+    float:left;
+  }
 `;
 export const SearchInfoItem = styled.a`
   display: block;
