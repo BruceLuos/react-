@@ -1,32 +1,32 @@
-import styled from 'styled-components'
+import styled from "styled-components";
 
 export const HomeWrapper = styled.div`
-    width:960px;
-    margin: 0 auto;
-    // background:red;
-    overflow:hidden;
-`
+  width: 960px;
+  margin: 0 auto;
+  // background:red;
+  overflow: hidden;
+`;
 export const HomeLeft = styled.div`
-    width:625px;
-    padding-top:30px;
-    margin-left:15px;
-    float:left;
-    // background:blue;
-    .bannerImg{
-        width:625px;
-        height:270px;
-    }
-`
+  width: 625px;
+  padding-top: 30px;
+  margin-left: 15px;
+  float: left;
+  // background:blue;
+  .bannerImg {
+    width: 625px;
+    height: 270px;
+  }
+`;
 export const HomeRight = styled.div`
-    width:250px;
-    float:right;
-    // background:green;
-`
+  width: 280px;
+  float: right;
+  // background:green;
+`;
 export const TopicWrapper = styled.div`
-	overflow: hidden;
-	padding: 20px 0 10px 0;
-	margin-left: -18px;
-	border-bottom: 1px solid #dcdcdc;
+  overflow: hidden;
+  padding: 20px 0 10px 0;
+  margin-left: -18px;
+  border-bottom: 1px solid #dcdcdc;
 `;
 
 export const TopicItem = styled.div`
@@ -35,9 +35,9 @@ export const TopicItem = styled.div`
 	line-height: 32px;
 	margin-left: 18px;
 	margin-bottom: 18px;
-	padding-right: 10px
+	padding-right: 10px;
 	background: #f7f7f7;
-	font-size: 14px;
+	font-size: 13px;
 	color: #000;
 	border: 1px solid #dcdcdc;
 	border-radius: 4px;
@@ -50,33 +50,70 @@ export const TopicItem = styled.div`
 	}
 `;
 export const ListItem = styled.div`
-	border-bottom: 1px solid #dcdcdc;
-	padding:20px 0;
-	overflow:hidden;
-	&::a{
-		text-decoration:none;
-	}
-	.ItemImg{
-		display:block;
-		float:right;
-		width:150px;
-		height:100px;
-		border-radius: 10px;
-	}
-`
+  border-bottom: 1px solid #dcdcdc;
+  padding: 20px 0;
+  overflow: hidden;
+  &::a {
+    text-decoration: none;
+  }
+  .ItemImg {
+    display: block;
+    float: right;
+    width: 150px;
+    height: 100px;
+    border-radius: 10px;
+  }
+`;
 export const ItemInfo = styled.div`
-	float:left;
-	width:475px;
-	.title {
-		line-height: 27px;
-		font-size: 18px;
-		font-weight: bold;
-		color: #333;
+  float: left;
+  width: 475px;
+  .title {
+    line-height: 27px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+  }
+  .desc {
+    line-height: 24px;
+    font-size: 13px;
+    color: #999;
+  }
+`;
+export const RecommendWrapper = styled.div`
+  margin: 30px 0;
+  width: 280px;
+  //   background: red;
+`;
+export const RecommendItem = styled.div`
+  height: 50px;
+  background: url(${props => props.imgUrl}) no-repeat;
+  background-size: 100% 100%;
+  width: 100%;
+  margin-bottom: 6px;
+  border-radius: 4px;
+`;
+export const XrcodeItem = styled.div`
+  margin-bottom: 30px;
+  padding: 10px 22px;
+  width: 234px;
+  border: 1px solid #f0f0f0;
+  border-radius: 6px;
+  background-color: #fff;
+  overflow: hidden;
+  .xrcode {
+    float: left;
+    width: 60px;
+    height: 60px;
+  }
+  .xrcodeContent {
+    float: right;
+	line-height: 20px;
+	margin-top:10px;
+	margin-right:30px;
+	vertical-align: middle;
+	.content{
+		font-size:12px;
+		color:grey;
 	}
-	.desc {
-		line-height: 24px;
-		font-size: 13px;
-		color: #999;
-	}
-`
-
+  }
+`;

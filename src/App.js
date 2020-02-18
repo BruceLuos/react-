@@ -4,12 +4,14 @@ import Header from "./common/header";
 import store from "./store";
 import {Provider} from "react-redux";
 import { GlobalIcon } from "./statics/iconfont/iconfont";
+import {GlobalStyle} from './style'
 import Home from "./pages/home";
 import Detail from "./pages/detail";
 function App() {
   return (
     <div className="App">
       <Provider store={store}>
+        <GlobalStyle></GlobalStyle>
         <Header></Header>
         <GlobalIcon></GlobalIcon>
         <BrowserRouter>

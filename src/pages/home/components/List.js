@@ -4,7 +4,7 @@ import {connect} from 'react-redux'
 class List extends Component {
   render() {
     return this.props.articleList.map((item)=>{
-      return <ListItem>
+      return <ListItem key={item.get("id")}>
       <ItemInfo>
     <a className="title" href="/">{item.get('title')}</a>
         <p className="desc">{item.get('desc')}</p>
