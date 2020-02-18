@@ -49,4 +49,34 @@ export const TopicItem = styled.div`
 		margin-right: 10px;
 	}
 `;
+export const ListItem = styled.div`
+	border-bottom: 1px solid #dcdcdc;
+	padding:20px 0;
+	overflow:hidden;
+	&::a{
+		text-decoration:none;
+	}
+	.ItemImg{
+		display:block;
+		float:right;
+		width:150px;
+		height:100px;
+		border-radius: 10px;
+	}
+`
+export const ItemInfo = styled.div`
+	float:left;
+	width:475px;
+	.title {
+		line-height: 27px;
+		font-size: 18px;
+		font-weight: bold;
+		color: #333;
+	}
+	.desc {
+		line-height: 24px;
+		font-size: 13px;
+		color: #999;
+	}
+`
 
