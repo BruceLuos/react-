@@ -1,5 +1,7 @@
 import axios from "axios";
 import * as constant from "./constant";
+import { fromJS } from 'immutable';
+
 const changeHomeData = result => {
   return {
     type: constant.CHANGEHOMEDATA,
@@ -8,6 +10,13 @@ const changeHomeData = result => {
     recommendList: result.recommendList
   };
 };
+
+const addHomeList = (list, nextPage) => ({
+	type: constant.MORELISTINFO,
+	list: fromJS(list),
+	nextPage
+})
+
 export const getHomeInfo = () => {
   return dispatch => {
     axios.get("/api/home.json").then(res => {
@@ -17,3 +26,12 @@ export const getHomeInfo = () => {
     });
   };
 };
+
+export const getMoreList = (page) => {
+	return (dispatch) => {
+		axios.get('/api/homeList.json?page=' + page).then((res) => {
+			const result = res.data.data;
+			dispatch(addHomeList(result, page + 1));
+		});
+	}
+}

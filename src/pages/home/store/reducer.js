@@ -16,10 +16,20 @@ const changeHomeData = (state, action) => {
 		recommendList: fromJS(action.recommendList)
 	});
 };
+
+const MoreListInfo = (state,action)=>{
+	return state.merge({
+		'articleList': state.get('articleList').concat(action.list),
+		'articlePage': action.nextPage
+	});
+}
+
 export default (state = defaultState,action)=>{
 	switch(action.type) {
 		case constant.CHANGEHOMEDATA:
 			return changeHomeData(state, action);
+		case constant.MORELISTINFO:
+			return MoreListInfo(state,action)
 		default:
 			return state;
 	}
