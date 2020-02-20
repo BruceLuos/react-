@@ -7,7 +7,8 @@ const changeHomeData = result => {
     type: constant.CHANGEHOMEDATA,
     topicList: result.topicList,
     articleList: result.articleList,
-    recommendList: result.recommendList
+    recommendList: result.recommendList,
+    writterList:result.writterList
   };
 };
 
@@ -22,6 +23,7 @@ export const getHomeInfo = () => {
     axios.get("/api/home.json").then(res => {
         console.log('hh')
       const result = res.data.data;
+      console.log(result.writterList)
       dispatch(changeHomeData(result));
     });
   };

@@ -63,6 +63,42 @@
 		},{
 			"id": 4,
 			"imgUrl": "https://cdn2.jianshu.io/assets/web/banner-s-6-c4d6335bfd688f2ca1115b42b04c28a7.png"
+		}],
+		"writterList":[{
+			"id":1,
+			"imgUrl":"https://upload.jianshu.io/users/upload_avatars/278/3d103a3cbb96.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/96/h/96/format/webp",
+			"writterName":"邓哲",
+			"writterWrite":" 写了422.1k字 · 1.3k喜欢"
+		},
+		{
+			"id":2,
+			"imgUrl":"https://upload.jianshu.io/users/upload_avatars/9988193/fc26c109-1ae6-4327-a298-2def343e9cd8.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/96/h/96/format/webp",
+			"writterName":"邓哲",
+			"writterWrite":" 写了422.1k字 · 1.3k喜欢"
+		},
+		{
+			"id":3,
+			"imgUrl":"https://upload.jianshu.io/users/upload_avatars/14715425/e0668349-8c75-43db-8a9d-c388e5f00d0d.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/96/h/96/format/webp",
+			"writterName":"邓哲",
+			"writterWrite":" 写了422.1k字 · 1.3k喜欢"
+		},
+		{
+			"id":4,
+			"imgUrl":"https://upload.jianshu.io/users/upload_avatars/278/3d103a3cbb96.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/96/h/96/format/webp",
+			"writterName":"邓哲",
+			"writterWrite":" 写了422.1k字 · 1.3k喜欢"
+		},
+		{
+			"id":5,
+			"imgUrl":"https://upload.jianshu.io/users/upload_avatars/9988193/fc26c109-1ae6-4327-a298-2def343e9cd8.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/96/h/96/format/webp",
+			"writterName":"邓哲",
+			"writterWrite":" 写了422.1k字 · 1.3k喜欢"
+		},
+		{
+			"id":6,
+			"imgUrl":"https://upload.jianshu.io/users/upload_avatars/14715425/e0668349-8c75-43db-8a9d-c388e5f00d0d.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/96/h/96/format/webp",
+			"writterName":"邓哲",
+			"writterWrite":" 写了422.1k字 · 1.3k喜欢"
 		}]
 	}
 }

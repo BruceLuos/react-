@@ -6,14 +6,16 @@ const defaultState = fromJS({
 	articleList: [],
 	recommendList: [],
 	articlePage: 1,
-	showScroll: false
+	showScroll: false,
+	writterList:[]
 });
 
 const changeHomeData = (state, action) => {
 	return state.merge({
 		topicList: fromJS(action.topicList),
 		articleList: fromJS(action.articleList),
-		recommendList: fromJS(action.recommendList)
+		recommendList: fromJS(action.recommendList),
+		writterList: fromJS(action.writterList)
 	});
 };
 

@@ -92,6 +92,19 @@ export const RecommendItem = styled.div`
   margin-bottom: 6px;
   border-radius: 4px;
 `;
+export const RecommendWritter = styled.div`
+  width:100%;
+  font-size:14px;
+  color:#969696;
+  overflow:hidden;
+  .writter{
+	  float:left;
+  }
+  .change{
+	  float:right;
+  }
+`
+
 export const XrcodeItem = styled.div`
   margin-bottom: 30px;
   padding: 10px 22px;
@@ -128,3 +141,43 @@ export const LoadMore = styled.div`
 	color: #fff;
 	cursor: pointer;
 `;
+
+export const WritterWrapper = styled.ul`
+  width:280px;
+
+`
+export const WritterItem = styled.li`
+  margin-top:15px;
+  overflow:hidden;
+  .avater{
+	float: left;
+    width: 48px;
+    height: 48px;
+	margin-right: 10px;
+	img{
+		width: 100%;
+		height: 100%;
+		border: 1px solid #ddd;
+		border-radius:50%;
+	}
+  }
+  .follow{
+	float: right;
+    margin-top: 5px;
+    padding: 0;
+    font-size: 13px;
+    color: #42c02e;
+  }
+  .name{
+	padding-top: 5px;
+    margin-right: 60px;
+    font-size: 14px;
+	display: block;
+	color:black;
+  }
+  .writerW{
+	  font-size:12px;
+	  color:#969696;
+	  margin-top:2px;
+  }
+`
