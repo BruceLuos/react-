@@ -32,6 +32,8 @@ export default (state = defaultState,action)=>{
 			return changeHomeData(state, action);
 		case constant.MORELISTINFO:
 			return MoreListInfo(state,action)
+		case constant.TOGGLESCROLLTOP:
+			return state.set('showScroll', action.result);
 		default:
 			return state;
 	}

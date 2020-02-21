@@ -30,24 +30,24 @@ export const TopicWrapper = styled.div`
 `;
 
 export const TopicItem = styled.div`
-	float: left;
-	height: 32px;
-	line-height: 32px;
-	margin-left: 18px;
-	margin-bottom: 18px;
-	padding-right: 10px;
-	background: #f7f7f7;
-	font-size: 13px;
-	color: #000;
-	border: 1px solid #dcdcdc;
-	border-radius: 4px;
-	.topic-pic {
-		display: block;
-		float: left;
-		width: 32px;
-		height: 32px;
-		margin-right: 10px;
-	}
+  float: left;
+  height: 32px;
+  line-height: 32px;
+  margin-left: 18px;
+  margin-bottom: 18px;
+  padding-right: 10px;
+  background: #f7f7f7;
+  font-size: 13px;
+  color: #000;
+  border: 1px solid #dcdcdc;
+  border-radius: 4px;
+  .topic-pic {
+    display: block;
+    float: left;
+    width: 32px;
+    height: 32px;
+    margin-right: 10px;
+  }
 `;
 export const ListItem = styled.div`
   border-bottom: 1px solid #dcdcdc;
@@ -93,17 +93,17 @@ export const RecommendItem = styled.div`
   border-radius: 4px;
 `;
 export const RecommendWritter = styled.div`
-  width:100%;
-  font-size:14px;
-  color:#969696;
-  overflow:hidden;
-  .writter{
-	  float:left;
+  width: 100%;
+  font-size: 14px;
+  color: #969696;
+  overflow: hidden;
+  .writter {
+    float: left;
   }
-  .change{
-	  float:right;
+  .change {
+    float: right;
   }
-`
+`;
 
 export const XrcodeItem = styled.div`
   margin-bottom: 30px;
@@ -120,64 +120,75 @@ export const XrcodeItem = styled.div`
   }
   .xrcodeContent {
     float: right;
-	line-height: 20px;
-	margin-top:10px;
-	margin-right:30px;
-	vertical-align: middle;
-	.content{
-		font-size:12px;
-		color:grey;
-	}
+    line-height: 20px;
+    margin-top: 10px;
+    margin-right: 30px;
+    vertical-align: middle;
+    .content {
+      font-size: 12px;
+      color: grey;
+    }
   }
 `;
 export const LoadMore = styled.div`
-	width: 100%;
-	height: 40px;
-	line-height: 40px;
-	margin: 30px 0;
-	background: #a5a5a5;
-	text-align:center;
-	border-radius: 20px;
-	color: #fff;
-	cursor: pointer;
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  margin: 30px 0;
+  background: #a5a5a5;
+  text-align: center;
+  border-radius: 20px;
+  color: #fff;
+  cursor: pointer;
 `;
 
 export const WritterWrapper = styled.ul`
-  width:280px;
-
-`
+  width: 280px;
+`;
 export const WritterItem = styled.li`
-  margin-top:15px;
-  overflow:hidden;
-  .avater{
-	float: left;
+  margin-top: 15px;
+  overflow: hidden;
+  .avater {
+    float: left;
     width: 48px;
     height: 48px;
-	margin-right: 10px;
-	img{
-		width: 100%;
-		height: 100%;
-		border: 1px solid #ddd;
-		border-radius:50%;
-	}
+    margin-right: 10px;
+    img {
+      width: 100%;
+      height: 100%;
+      border: 1px solid #ddd;
+      border-radius: 50%;
+    }
   }
-  .follow{
-	float: right;
+  .follow {
+    float: right;
     margin-top: 5px;
     padding: 0;
     font-size: 13px;
     color: #42c02e;
   }
-  .name{
-	padding-top: 5px;
+  .name {
+    padding-top: 5px;
     margin-right: 60px;
     font-size: 14px;
-	display: block;
-	color:black;
+    display: block;
+    color: black;
   }
-  .writerW{
-	  font-size:12px;
-	  color:#969696;
-	  margin-top:2px;
+  .writerW {
+    font-size: 12px;
+    color: #969696;
+    margin-top: 2px;
   }
-`
+`;
+export const BackTop = styled.div`
+  position: fixed;
+  right: 100px;
+  bottom: 100px;
+  width: 60px;
+  height: 60px;
+  line-height: 60px;
+  text-align: center;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  color:black;
+`;
