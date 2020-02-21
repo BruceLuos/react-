@@ -35,3 +35,12 @@
 4.  [GVP](https://gitee.com/gvp) 全称是码云最有价值开源项目，是码云综合评定出的优秀开源项目
 5.  码云官方提供的使用手册 [https://gitee.com/help](https://gitee.com/help)
 6.  码云封面人物是一档用来展示码云会员风采的栏目 [https://gitee.com/gitee-stars/](https://gitee.com/gitee-stars/)
+
+<!-- 
+react-router-dom提供路由方法
+react-redux中的Provider能使包含其中的组件接收store里的值
+使用了react-redux的组件需要使用connect进行与store的连接
+使用immutable中的fromJs能使store中的数据不轻易修改
+因为当store中的数据一旦发生更新，所有的组件都会重新render，所以要在每个组件中添加上shouldComponentupdata进行当前组件是否需要更新，而使用pureCompon可以解决这个问题
+react-router-dom中的link可以进行路由的跳转
+ -->
