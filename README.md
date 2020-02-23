@@ -43,4 +43,8 @@ react-redux中的Provider能使包含其中的组件接收store里的值
 使用immutable中的fromJs能使store中的数据不轻易修改
 因为当store中的数据一旦发生更新，所有的组件都会重新render，所以要在每个组件中添加上shouldComponentupdata进行当前组件是否需要更新，而使用pureCompon可以解决这个问题
 react-router-dom中的link可以进行路由的跳转
+使用style-component出来的标签无法准确获取里面的dom,所以需要通过innerRef来获取dom
+react的登陆鉴权，当login为true时才能显示某个页面否则的话就跳转到登陆页面
+为了页面的请求优化，组件需要进行异步加载，所以就需要react-loadable插件来进行组件的创建
+当使用了react-loadable来异步加载组件，组件就有可能获取不到需要从路由this.props.params里的数据，所以需要用到react-router-dom中的withRouter来使组件能够获取this.props.params的数据
  -->

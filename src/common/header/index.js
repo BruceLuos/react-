@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { CSSTransition } from "react-transition-group";
 import { actionCreater } from "./store";
+import { actionCreators as loginActionCreators } from '../../pages/login/store'
+import {Link} from 'react-router-dom'
 import {
   HeaderWrapper,
   Logo,
@@ -68,7 +70,12 @@ class Header extends Component {
         <Navi>
           <NaviItem className="left active">首页</NaviItem>
           <NaviItem className="left">下载APP</NaviItem>
-          <NaviItem className="right">登录</NaviItem>
+          {
+						this.props.login ? 
+							<NaviItem onClick={this.props.logout} className='right'>退出</NaviItem> : 
+							<Link to='/login'><NaviItem className='right'>登陆</NaviItem></Link>
+					}
+          
           <NaviItem className="right beta"></NaviItem>
           <NaviItem className="right">Aa</NaviItem>
           <SearchWrapper>
@@ -103,7 +110,8 @@ const mapStateToprops = state => {
     headerList: state.get("header").get("headerList"),
     totalPage: state.get("header").get("totalPage"),
     page: state.get("header").get("page"),
-    mouseIn: state.get("header").get("mouseIn")
+    mouseIn: state.get("header").get("mouseIn"),
+    login:state.get('login').get('login')
   };
 };
 const mapDispatchToprops = dispatch => {
@@ -136,7 +144,10 @@ const mapDispatchToprops = dispatch => {
       } else {
         dispatch(actionCreater.changeItem(0));
       }
-    }
+    },
+    logout() {
+			dispatch(loginActionCreators.logout())
+		}
   };
 };
 export default connect(mapStateToprops, mapDispatchToprops)(Header);
