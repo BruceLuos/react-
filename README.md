@@ -47,4 +47,6 @@ react-router-dom中的link可以进行路由的跳转
 react的登陆鉴权，当login为true时才能显示某个页面否则的话就跳转到登陆页面
 为了页面的请求优化，组件需要进行异步加载，所以就需要react-loadable插件来进行组件的创建
 当使用了react-loadable来异步加载组件，组件就有可能获取不到需要从路由this.props.params里的数据，所以需要用到react-router-dom中的withRouter来使组件能够获取this.props.params的数据
+项目上线 
+项目放在xampp中的htdoc中，需要运行xampp的apache,数据api也要放在htdoc中
  -->
