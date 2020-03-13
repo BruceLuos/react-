@@ -2,7 +2,7 @@
 
 #### 介绍
 使用react进行简书网页的开发
-
+![Image text](https://gitee.com/BruceLluo/img-folder/raw/master/react%E7%AE%80%E4%B9%A6%E9%A1%B5%E9%9D%A2.jpg)
 #### 软件架构
 软件架构说明
 
